@@ -1,45 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.IO;
-using System.Diagnostics;
-using Microsoft.Win32;
+using Time_tracker.Contexts;
+using Time_tracker.Models;
+using System.Windows;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Time_tracker
 {
     public partial class MainWindow : Window
     {
+        public string tasks;
         private int time;
         private int breakTime;
         private DispatcherTimer dispatcherTimer;
         private DispatcherTimer breakDispatcher;
         SoundPlayer soundPlayer;
         public event Action<DispatcherTimer> Ended;
-        public class Task
-        {
-            public String task { get; set; }
-        }
-        
+        TodoDbContext _todoDbContext;
         public MainWindow()
         {
+
             InitializeComponent();
+            _todoDbContext = new TodoDbContext();
             continueTb.IsEnabled = false;
             offTbStudy.IsEnabled = false;
             stopTb.IsEnabled = false;
-       
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -164,20 +151,10 @@ namespace Time_tracker
             breakLabel.Visibility = Visibility.Hidden;
             timeLable.Content = string.Format("00:0{0}:{1}", time / 60, time % 60);
         }
-        public void WriteToFile()
-        {
-            using (StreamWriter writer = File.AppendText(@"D:/C# Proj/Time tracker/Time tracker/data.txt"))
-            {
-                writer.WriteLine(addTaskTb.Text);
-                
-            }
-        }
-        
-        
+
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            WriteToFile();
-   
+
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
@@ -185,10 +162,21 @@ namespace Time_tracker
             string delrlm = listBox1.SelectedItem.ToString();
             listBox1.Items.Remove(delrlm);
         }
-
-        private void tb1_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-
+            Todo td = new Todo() { Id = 1, Text = "2" };
+            try
+            {
+                _todoDbContext.Todoes.Add(td);
+                _todoDbContext.SaveChanges();
+                System.Windows.MessageBox.Show("added");
+              
+            }
+            catch(SqlException c)
+            {
+                System.Windows.MessageBox.Show("not added");
+            }
+            
         }
     }
 }
