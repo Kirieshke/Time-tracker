@@ -6,6 +6,10 @@ using Time_tracker.Models;
 using System.Windows;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Entity;
+using System.Collections.Generic;
+using System.Linq;
+using Time_tracker.Controllers;
 
 namespace Time_tracker
 {
@@ -159,8 +163,7 @@ namespace Time_tracker
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            string delrlm = listBox1.SelectedItem.ToString();
-            listBox1.Items.Remove(delrlm);
+            
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
@@ -177,6 +180,32 @@ namespace Time_tracker
                 System.Windows.MessageBox.Show("not added");
             }
             
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Todo> todoes = _todoDbContext.Todoes.ToList();
+            
+            categoryDataGrid.ItemsSource = todoes;
+
+    
+        }
+
+        private void add_data_click1(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBox.Show("ewe");
+        }
+
+        private void categoryDataGrid_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
+        {
+            _todoDbContext.Todoes.Add(
+                new Todo
+                {
+                    Id = 10,
+                    Text = e.Row.Item.ToString()
+                }
+             );
+            _todoDbContext.SaveChanges();
         }
     }
 }

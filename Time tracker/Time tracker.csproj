@@ -73,6 +73,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Controllers\TodoController.cs" />
+    <Compile Include="Migrations\202201241823527_InitialCreate.cs" />
+    <Compile Include="Migrations\202201241823527_InitialCreate.designer.cs">
+      <DependentUpon>202201241823527_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201251112347_AddedTime.cs" />
+    <Compile Include="Migrations\202201251112347_AddedTime.designer.cs">
+      <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\ITodoRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +112,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202201241823527_InitialCreate.resx">
+      <DependentUpon>202201241823527_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201251112347_AddedTime.resx">
+      <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

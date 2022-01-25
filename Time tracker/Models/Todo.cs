@@ -12,5 +12,7 @@ namespace Time_tracker.Models
         [Key]
         public int Id { get; set; }
         public string Text { get; set; }
+        public DateTime time { get; set; } = DateTime.Now;
+     
     }
 }

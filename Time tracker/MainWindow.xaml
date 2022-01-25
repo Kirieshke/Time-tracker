@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Time_tracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="824.759" Width="1257.114">
+        Title="MainWindow" Height="824.759" Width="1257.114" Loaded="Window_Loaded">
     <Grid x:Name="grid1" Margin="2,0,-8.6,-2.8" HorizontalAlignment="Left" Width="1257">
         <Label x:Name="timeLable" Content="" HorizontalAlignment="Left" Margin="112,251,0,0" VerticalAlignment="Top" Height="77" Width="518" FontSize="48" Background="#FFFF7F7F"/>
         <Button x:Name="bt1" Content="Установить таймер" HorizontalAlignment="Left" Margin="112,427,0,0" VerticalAlignment="Top" Width="518" Height="70" FontSize="20" Click="Button_Click"/>
@@ -19,9 +19,25 @@
         <Label Content="        Добавьте задачу" HorizontalAlignment="Left" Margin="747,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.547" Width="450" Height="70" FontSize="36"/>
         <Button Content="+" HorizontalAlignment="Left" Margin="1102,251,0,0" VerticalAlignment="Top" Width="75" Height="70" FontSize="36" RenderTransformOrigin="0.501,-0.293" Click="Button_Click_4"/>
         <TextBox x:Name="addTaskTb" HorizontalAlignment="Left" Height="70" Margin="727,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" FontSize="22"/>
-        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="231" Margin="727,342,0,0" VerticalAlignment="Top" Width="450"/>
+
         <Button Content="Delete" HorizontalAlignment="Left" Margin="727,595,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="Button_Click_5"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="339,70,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
-
+        <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
+                    ItemsSource="{Binding}" Margin="727,360,80,236"
+                    RowDetailsVisibilityMode="VisibleWhenSelected" CellEditEnding="categoryDataGrid_CellEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding Text}"
+                                    Header="Task" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="column2" Binding="{Binding time}"
+                                    Header="Time of adding" Width="SizeToHeader"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="add_data_click1">Details</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
