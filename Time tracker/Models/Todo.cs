@@ -12,7 +12,20 @@ namespace Time_tracker.Models
         [Key]
         public int Id { get; set; }
         public string Text { get; set; }
-        public DateTime time { get; set; } = DateTime.Now;
-     
+        public string Description { get; set; }
+        public DateTime Deadline { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
+        public Todo()
+        {
+
+        }
+        public Todo(string Text)
+        {
+            this.Text = Text;
+        }
+        public override string ToString()
+        {
+            return Text;
+        }
     }
 }

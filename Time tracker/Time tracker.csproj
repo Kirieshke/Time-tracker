@@ -81,8 +81,15 @@
     <Compile Include="Migrations\202201251112347_AddedTime.designer.cs">
       <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201271744321_UpdatedDbWithDedlain.cs" />
+    <Compile Include="Migrations\202201271744321_UpdatedDbWithDedlain.designer.cs">
+      <DependentUpon>202201271744321_UpdatedDbWithDedlain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\ITodoRepository.cs" />
+    <Compile Include="Windows\AddTaskWindow.xaml.cs">
+      <DependentUpon>AddTaskWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\AddTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Todo.cs" />
@@ -117,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201251112347_AddedTime.resx">
       <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201271744321_UpdatedDbWithDedlain.resx">
+      <DependentUpon>202201271744321_UpdatedDbWithDedlain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,6 +10,7 @@ using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using Time_tracker.Controllers;
+using Time_tracker.Windows;
 
 namespace Time_tracker
 {
@@ -163,7 +164,7 @@ namespace Time_tracker
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            
+            categoryDataGrid.Items.Refresh();
         }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
@@ -198,14 +199,13 @@ namespace Time_tracker
 
         private void categoryDataGrid_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
         {
-            _todoDbContext.Todoes.Add(
-                new Todo
-                {
-                    Id = 10,
-                    Text = e.Row.Item.ToString()
-                }
-             );
-            _todoDbContext.SaveChanges();
+            
+        }
+
+        private void categoryDataGrid_BeginningEdit(object sender, System.Windows.Controls.DataGridBeginningEditEventArgs e)
+        {
+            AddTaskWindow _addTaskWindow = new AddTaskWindow();
+            _addTaskWindow.Show();
         }
     }
 }
