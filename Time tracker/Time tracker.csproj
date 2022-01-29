@@ -81,11 +81,20 @@
     <Compile Include="Migrations\202201251112347_AddedTime.designer.cs">
       <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202201271744321_UpdatedDbWithDedlain.cs" />
-    <Compile Include="Migrations\202201271744321_UpdatedDbWithDedlain.designer.cs">
-      <DependentUpon>202201271744321_UpdatedDbWithDedlain.cs</DependentUpon>
+    <Compile Include="Migrations\202201281543450_Mig2.cs" />
+    <Compile Include="Migrations\202201281543450_Mig2.designer.cs">
+      <DependentUpon>202201281543450_Mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201281706435_AddedDoneCheck.cs" />
+    <Compile Include="Migrations\202201281706435_AddedDoneCheck.designer.cs">
+      <DependentUpon>202201281706435_AddedDoneCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201292340305_AddedTableMadedTasks.cs" />
+    <Compile Include="Migrations\202201292340305_AddedTableMadedTasks.designer.cs">
+      <DependentUpon>202201292340305_AddedTableMadedTasks.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\MadedTask.cs" />
     <Compile Include="Repository\ITodoRepository.cs" />
     <Compile Include="Windows\AddTaskWindow.xaml.cs">
       <DependentUpon>AddTaskWindow.xaml</DependentUpon>
@@ -129,8 +138,14 @@
     <EmbeddedResource Include="Migrations\202201251112347_AddedTime.resx">
       <DependentUpon>202201251112347_AddedTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201271744321_UpdatedDbWithDedlain.resx">
-      <DependentUpon>202201271744321_UpdatedDbWithDedlain.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202201281543450_Mig2.resx">
+      <DependentUpon>202201281543450_Mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201281706435_AddedDoneCheck.resx">
+      <DependentUpon>202201281706435_AddedDoneCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201292340305_AddedTableMadedTasks.resx">
+      <DependentUpon>202201292340305_AddedTableMadedTasks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

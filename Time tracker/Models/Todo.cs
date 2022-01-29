@@ -13,8 +13,9 @@ namespace Time_tracker.Models
         public int Id { get; set; }
         public string Text { get; set; }
         public string Description { get; set; }
-        public DateTime Deadline { get; set; }
-        public DateTime StartDate { get; set; } = DateTime.Now;
+        public DateTime? Deadline { get; set; }
+        public DateTime? StartDate { get; set; } = DateTime.Now;
+        public bool? IsDone { get; set; } = false;
         public Todo()
         {
 

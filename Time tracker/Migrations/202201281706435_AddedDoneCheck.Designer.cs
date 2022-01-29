@@ -7,13 +7,13 @@ namespace Time_tracker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class UpdatedDbWithDedlain : IMigrationMetadata
+    public sealed partial class AddedDoneCheck : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedDbWithDedlain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedDoneCheck));
         
         string IMigrationMetadata.Id
         {
-            get { return "202201271744321_UpdatedDbWithDedlain"; }
+            get { return "202201281706435_AddedDoneCheck"; }
         }
         
         string IMigrationMetadata.Source

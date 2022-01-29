@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Time_tracker.Controllers;
 using Time_tracker.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Time_tracker
 {
@@ -206,6 +208,11 @@ namespace Time_tracker
         {
             AddTaskWindow _addTaskWindow = new AddTaskWindow();
             _addTaskWindow.Show();
+        }
+
+        private void categoryDataGrid_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            
         }
     }
 }

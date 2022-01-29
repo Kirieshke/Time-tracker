@@ -33,7 +33,9 @@ namespace Time_tracker.Windows
             _todoDbContext.Todoes.Add(
                new Todo
                {
-                   Text = TaskNameTb.Text
+                   Text = TaskNameTb.Text,
+                   Description = DescTb.Text,
+                   Deadline = CalendarItem.SelectedDate
                }
                );
             _todoDbContext.SaveChanges();

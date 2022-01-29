@@ -11,6 +11,7 @@ namespace Time_tracker.Contexts
     class TodoDbContext: DbContext
     {
         public DbSet<Todo> Todoes { get; set; }
+        public DbSet<MadedTask> MadedTasks { get; set; }
         public TodoDbContext() : base("db_todoes")
         {
 
