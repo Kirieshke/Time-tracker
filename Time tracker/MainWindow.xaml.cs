@@ -196,7 +196,8 @@ namespace Time_tracker
 
         private void add_data_click1(object sender, RoutedEventArgs e)
         {
-            System.Windows.MessageBox.Show("ewe");
+            _todoDbContext.Database.ExecuteSqlCommand("insert into MadedTasks(MadedTaskText,MadedTaskDescription,MadedTaskDeadline,MadedTaskStartDate) (select Text, Description, Deadline,StartDate from Todoes where Text ='"+categoryDataGrid.SelectedItem.ToString()+"')");
+            _todoDbContext.SaveChanges();
         }
 
         private void categoryDataGrid_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
@@ -212,6 +213,13 @@ namespace Time_tracker
 
         private void categoryDataGrid_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            MadedTasksWindow madedTasksWindow = new MadedTasksWindow();
+            madedTasksWindow.Show();
             
         }
     }

@@ -12,7 +12,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Text = c.String(),
+                        Text = c.String()
                     })
                 .PrimaryKey(t => t.Id);
             

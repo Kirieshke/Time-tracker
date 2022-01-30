@@ -93,11 +93,18 @@
     <Compile Include="Migrations\202201292340305_AddedTableMadedTasks.designer.cs">
       <DependentUpon>202201292340305_AddedTableMadedTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201301309508__mig.cs" />
+    <Compile Include="Migrations\202201301309508__mig.designer.cs">
+      <DependentUpon>202201301309508__mig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MadedTask.cs" />
     <Compile Include="Repository\ITodoRepository.cs" />
     <Compile Include="Windows\AddTaskWindow.xaml.cs">
       <DependentUpon>AddTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MadedTasksWindow.xaml.cs">
+      <DependentUpon>MadedTasksWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +120,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\AddTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MadedTasksWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -146,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201292340305_AddedTableMadedTasks.resx">
       <DependentUpon>202201292340305_AddedTableMadedTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201301309508__mig.resx">
+      <DependentUpon>202201301309508__mig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

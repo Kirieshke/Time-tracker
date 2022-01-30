@@ -1,0 +1,25 @@
+﻿<Window x:Class="Time_tracker.Windows.MadedTasksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Time_tracker.Windows"
+        mc:Ignorable="d"
+        Title="MadedTasksWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="madedTaskGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
+                    ItemsSource="{Binding}" Margin="51,10,36.6,82"
+                    RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="nameColumn" Binding="{Binding MadedTaskText}"
+                                    Header="Task" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="column2" Binding="{Binding MadedTaskDescription}"
+                                    Header="Description" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="column3" Binding="{Binding MadedTaskDeadline}"
+                                    Header="Deadline" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="column4" Binding="{Binding MadedTaskStartDate}"
+                                    Header="Start date" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

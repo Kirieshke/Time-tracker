@@ -35,7 +35,9 @@ namespace Time_tracker.Windows
                {
                    Text = TaskNameTb.Text,
                    Description = DescTb.Text,
-                   Deadline = CalendarItem.SelectedDate
+                   Deadline = CalendarItem.SelectedDate,
+                   StartDate = DateTime.Now,
+                   IsDone = false
                }
                );
             _todoDbContext.SaveChanges();

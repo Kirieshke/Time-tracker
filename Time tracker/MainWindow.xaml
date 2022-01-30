@@ -8,18 +8,15 @@
         Title="MainWindow" Height="824.759" Width="1257.114" Loaded="Window_Loaded">
     <Grid x:Name="grid1" Margin="2,0,-8.6,-2.8" HorizontalAlignment="Left" Width="1257">
         <Label x:Name="timeLable" Content="" HorizontalAlignment="Left" Margin="112,251,0,0" VerticalAlignment="Top" Height="77" Width="518" FontSize="48" Background="#FFFF7F7F"/>
-        <Button x:Name="bt1" Content="Установить таймер" HorizontalAlignment="Left" Margin="112,427,0,0" VerticalAlignment="Top" Width="518" Height="70" FontSize="20" Click="Button_Click"/>
+        <Button x:Name="bt1" Content="Установить таймер" HorizontalAlignment="Left" Margin="112,393,0,0" VerticalAlignment="Top" Width="518" Height="70" FontSize="20" Click="Button_Click"/>
         <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="70" Margin="510,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="48"/>
-        <Label Content="Введите количество&#xD;&#xA;           минут" HorizontalAlignment="Left" Margin="112,127,0,0" VerticalAlignment="Top" Height="70" Width="227" FontSize="22"/>
-        <Button x:Name="offTbStudy" Content="Сброс" HorizontalAlignment="Left" Margin="499,595,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="Button_Click_3"/>
-        <Button x:Name="stopTb" Content="Стоп" HorizontalAlignment="Left" Margin="333,595,0,0" VerticalAlignment="Top" Width="105" Height="70" FontSize="36" RenderTransformOrigin="0.659,0.52" Click="Button_Click_1"/>
-        <Button x:Name="continueTb" Content="Продолжить" HorizontalAlignment="Left" Margin="112,595,0,0" VerticalAlignment="Top" Width="152" Height="70" FontSize="22" Click="Button_Click_2"/>
+        <Label Content="Введите количество минут" HorizontalAlignment="Left" Margin="134,138,0,0" VerticalAlignment="Top" Height="59" Width="347" FontSize="26"/>
+        <Button x:Name="offTbStudy" Content="Сброс" HorizontalAlignment="Left" Margin="499,519,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="Button_Click_3"/>
+        <Button x:Name="stopTb" Content="Стоп" HorizontalAlignment="Left" Margin="333,519,0,0" VerticalAlignment="Top" Width="105" Height="70" FontSize="36" RenderTransformOrigin="0.659,0.52" Click="Button_Click_1"/>
+        <Button x:Name="continueTb" Content="Продолжить" HorizontalAlignment="Left" Margin="112,519,0,0" VerticalAlignment="Top" Width="152" Height="70" FontSize="22" Click="Button_Click_2"/>
         <Label x:Name="breakLabel" Content="" HorizontalAlignment="Left" Margin="387,191,0,0" VerticalAlignment="Top" Height="77" Width="518" Visibility="Hidden" Background="#FF19D006" FontSize="48"/>
-        <Button x:Name="offTbBreak" Content="Сброс" HorizontalAlignment="Left" Margin="499,595,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="offTbBreak_Click" RenderTransformOrigin="0.531,2.343"/>
+        <Button x:Name="offTbBreak" Content="Сброс" HorizontalAlignment="Left" Margin="499,519,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="offTbBreak_Click" RenderTransformOrigin="0.531,2.343"/>
         <Label Content="        Добавьте задачу" HorizontalAlignment="Left" Margin="747,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.547" Width="450" Height="70" FontSize="36"/>
-
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="727,595,0,0" VerticalAlignment="Top" Width="131" Height="70" FontSize="36" Click="Button_Click_5"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="339,70,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True"
                     ItemsSource="{Binding}" Margin="727,250,60,301"
                     RowDetailsVisibilityMode="VisibleWhenSelected" CellEditEnding="categoryDataGrid_CellEditEnding" BeginningEdit="categoryDataGrid_BeginningEdit" MouseRightButtonDown="categoryDataGrid_MouseRightButtonDown" >
@@ -41,5 +38,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Посмотреть выполенные задачи" HorizontalAlignment="Left" Margin="727,519,0,0" VerticalAlignment="Top" Width="470" Height="70" FontSize="24" Click="Button_Click_7"/>
     </Grid>
 </Window>
