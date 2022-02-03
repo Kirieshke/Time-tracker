@@ -13,6 +13,7 @@ using Time_tracker.Controllers;
 using Time_tracker.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Time_tracker
 {
@@ -26,9 +27,9 @@ namespace Time_tracker
         SoundPlayer soundPlayer;
         public event Action<DispatcherTimer> Ended;
         TodoDbContext _todoDbContext;
+        List<Todo> todoes;
         public MainWindow()
         {
-
             InitializeComponent();
             _todoDbContext = new TodoDbContext();
             continueTb.IsEnabled = false;
@@ -163,11 +164,6 @@ namespace Time_tracker
         {
 
         }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            categoryDataGrid.Items.Refresh();
-        }
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             Todo td = new Todo() { Id = 1, Text = "2" };
@@ -187,17 +183,26 @@ namespace Time_tracker
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Todo> todoes = _todoDbContext.Todoes.ToList();
-            
+            todoes = _todoDbContext.Todoes.ToList();
             categoryDataGrid.ItemsSource = todoes;
-
-    
+            
         }
 
         private void add_data_click1(object sender, RoutedEventArgs e)
         {
             _todoDbContext.Database.ExecuteSqlCommand("insert into MadedTasks(MadedTaskText,MadedTaskDescription,MadedTaskDeadline,MadedTaskStartDate) (select Text, Description, Deadline,StartDate from Todoes where Text ='"+categoryDataGrid.SelectedItem.ToString()+"')");
+            
             _todoDbContext.SaveChanges();
+            try
+            {
+                _todoDbContext.Todoes.Remove((Todo)this.categoryDataGrid.SelectedItem);
+
+                _todoDbContext.SaveChanges();
+            }
+            catch (Exception c)
+            {
+                System.Windows.MessageBox.Show(c.Message);
+            }
         }
 
         private void categoryDataGrid_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
@@ -215,12 +220,30 @@ namespace Time_tracker
         {
             
         }
-
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
             MadedTasksWindow madedTasksWindow = new MadedTasksWindow();
             madedTasksWindow.Show();
             
+        }
+        private void delete_Item_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _todoDbContext.Todoes.Remove((Todo)this.categoryDataGrid.SelectedItem);
+                
+                _todoDbContext.SaveChanges();
+            }
+            catch(Exception c)
+            {
+                System.Windows.MessageBox.Show(c.Message);
+            }
+            
+        }
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            todoes = _todoDbContext.Todoes.ToList();
+            categoryDataGrid.ItemsSource = todoes; 
         }
     }
 }

@@ -72,7 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Migrations\202201241823527_InitialCreate.cs" />
     <Compile Include="Migrations\202201241823527_InitialCreate.designer.cs">
       <DependentUpon>202201241823527_InitialCreate.cs</DependentUpon>
@@ -99,7 +98,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MadedTask.cs" />
-    <Compile Include="Repository\ITodoRepository.cs" />
     <Compile Include="Windows\AddTaskWindow.xaml.cs">
       <DependentUpon>AddTaskWindow.xaml</DependentUpon>
     </Compile>
